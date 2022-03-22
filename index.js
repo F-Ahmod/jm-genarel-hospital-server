@@ -2,7 +2,6 @@ const express=require('express');
 const { MongoClient } = require('mongodb');
 require('dotenv').config();
 const app=express();
-const ObjectId=require('mongodb').ObjectId;
 const port=process.env.PORT || 5000 
 const cors =require('cors')
 // medilware
@@ -58,6 +57,6 @@ run().catch(console.dir);
 app.get('/',(req,res)=>{
     res.send('runing server 5000')
 });
-app.listen(port,()=>{
-    console.log('live server',port);
-})
+app.listen(process.env.PORT || 5000, function () {
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
