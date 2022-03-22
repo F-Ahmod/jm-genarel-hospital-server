@@ -12,7 +12,7 @@ app.use(express.json());
 
 
 // cannect uri
-const uri = `mongodb+srv://jm-hospital:7ypATjeqI71vxb6T@cluster0.n0kiz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.n0kiz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 
